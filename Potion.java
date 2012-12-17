@@ -30,6 +30,14 @@ public class Potion {
   
   public Potion(EntityPotion epotion) {
     this.basePotion = epotion;
+    this.potion = getPotionFromEntity(epoiton);
+    if(potion != null) {
+     this.isPotion = true;
+     this.id = potion.getTypeId();
+    } else {
+     this.isPotion = false;
+     this.id = null;
+    }
   }
   
   public boolean isPotion() {
